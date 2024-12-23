@@ -5,9 +5,9 @@ import NotFoundError from "../domain/errors/not-found-error.js";
 
 export const getAllReviews = async (req, res) => {
   try { 
-    const { reviewId } = req.query;
-    if (reviewId) {
-      const reviews = await Review.find({ review: reviewId })
+    const { reviewId, bookId } = req.query;
+    if (bookId) {
+      const reviews = await Review.find({ book: bookId })
       .populate("book", ["title", "author"])
       .exec();
         console.log("Reviews:", reviews);
@@ -54,12 +54,12 @@ export const deleteReview = async (req, res) => {
 export const getReviewById = async (req, res) => {
   try {
     const reviewId = req.params.id;
-    console.log("Fetching Review Application ID:", reviewId);
+    console.log("Fetching Review ID:", reviewId);
 
-    const review = await ReviewApplication.findById(reviewId)
+    const review = await Review.findById(reviewId)
 
     if (review === null) {
-      throw new NotFoundError("Review Application not found");
+      throw new NotFoundError("Review not found");
     }
     console.log("Review:", review);
     return res.status(200).json(review);
