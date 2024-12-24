@@ -42,8 +42,3 @@ cd front-end
 npm install
 npm run dev
 ```
-
-4. Start the Expo development server:
-```bash
-npx expo start
-```
