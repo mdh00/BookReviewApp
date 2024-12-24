@@ -8,6 +8,7 @@ Welcome to the Book Review App! This application allows users to add, edit, and 
 - Delete review
 - Update review
 - Display all reviews for a book
+- Add book
 
 ## Prerequisites
 
