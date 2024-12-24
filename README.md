@@ -2,6 +2,13 @@
 
 Welcome to the Book Review App! This application allows users to add, edit, and review books.
 
+### Completed Features:
+- Display available books
+- Add review for book
+- Delete review
+- Update review
+- Display all reviews for a book
+
 ## Prerequisites
 
 Before setting up the project, ensure that you have the following installed:
