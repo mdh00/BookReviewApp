@@ -12,7 +12,7 @@ function ReviewCard(props) {
   return (
       <Card>
         <CardHeader>
-          <CardTitle>{props.review.reviewText}</CardTitle>
+          <CardTitle>"{props.review.reviewText}"</CardTitle>
           <CardDescription></CardDescription>
         </CardHeader>
         <CardContent>{props.review.rating}/5</CardContent>

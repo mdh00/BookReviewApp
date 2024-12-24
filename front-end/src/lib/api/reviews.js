@@ -28,25 +28,45 @@ export const getReviewsForBook = async (bookId) => {
 
 export const getReviewById = async (reviewId) => {
     const res = await fetch(`http://localhost:8000/api/reviews/${reviewId}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
     });
     if (!res.ok) {
-      throw new Error("Failed to fetch review");
+        throw new Error("Failed to fetch review");
     }
     console.log("Review id:", reviewId);
     const data = await res.json();
     return data;
-  };
+};
 
 
-  export const deleteReview = async (reviewId) => {
+export const deleteReview = async (reviewId) => {
     const res = await fetch(`http://localhost:8000/api/reviews/${reviewId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
         },
     });
+}
+
+export const updateReview = async (reviewId, updatedData) => {
+    try {
+        const res = await fetch(`http://localhost:8000/api/reviews/${reviewId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedData),
+        });
+        if (!res.ok) {
+            throw new Error("Failed to update review");
+        }
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
 }
