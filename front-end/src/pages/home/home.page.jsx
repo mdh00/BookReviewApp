@@ -2,9 +2,11 @@ import BookSection from "./components/BookSection";
 import AddBook from "../book/add-book/addBook";
 function HomePage() {
   return (
-    <main>      
+    <main>
       <div>
-<AddBook />
+        <div className="mt-8">
+          <AddBook />
+        </div>
         <BookSection />
       </div>
     </main>
