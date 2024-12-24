@@ -24,7 +24,7 @@ import { Input } from "@/components/ui/input"
 const BookPage = () => {
   const [book, setBook] = useState([]);
   const [reviews, setReviews] = useState([]);
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(1);
   const [reviewText, setReviewText] = useState('');
 
   const [selectedReview, setSelectedReview] = useState(null);
@@ -157,7 +157,7 @@ const BookPage = () => {
   return (
     <main>
       <h2 className='pt-5'>{book.title}</h2>
-      <p class="italic mb-4">{book.author}</p>
+      <p className="italic mb-4">{book.author}</p>
       <Separator />
 
       <div className="py-8">
